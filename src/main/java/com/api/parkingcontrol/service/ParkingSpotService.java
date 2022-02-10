@@ -1,6 +1,5 @@
 package com.api.parkingcontrol.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.api.parkingcontrol.repository.ParkingSpotRepository;
@@ -8,8 +7,11 @@ import com.api.parkingcontrol.repository.ParkingSpotRepository;
 @Service
 public class ParkingSpotService {
 	
-	@Autowired     // INJEÇÃO DE DEPENDENCIAS
-	ParkingSpotRepository parkingSpotRepository;
+	final ParkingSpotRepository parkingSpotRepository;
+
+	public ParkingSpotService(ParkingSpotRepository parkingSpotRepository) {
+		this.parkingSpotRepository = parkingSpotRepository;
+	}
 	
 
 }
